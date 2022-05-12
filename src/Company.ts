@@ -1,7 +1,7 @@
 import { Location } from './types/index';
 import faker from 'faker';
 
-export class Faker {
+export class Company {
     private companyName: string;
     private catchPhrase: string;
     private location: Location;
