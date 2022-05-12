@@ -1,15 +1,17 @@
 import { Location } from './types/index';
 import faker from 'faker';
 
-export class User {
-    private name: string;
+export class Faker {
+    private companyName: string;
+    private catchPhrase: string;
     private location: Location;
 
     constructor() {
-        this.name = `${faker.name.firstName()} ${faker.name.lastName()}`,
+        this.companyName = faker.company.companyName();
+        this.catchPhrase = faker.company.catchPhrase();
         this.location = {
             lat: parseFloat(faker.address.latitude()),
             lng: parseFloat(faker.address.longitude())
-        } 
+        }
     }
 }
