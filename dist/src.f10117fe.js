@@ -136894,6 +136894,10 @@ function () {
     };
   }
 
+  User.prototype.showInformation = function () {
+    return "\n            <div>\n                <h5>Name: ".concat(this.name, "</h5>\n                <p>lat:").concat(this.location.lat, " lng:").concat(this.location.lng, "</p>\n            </div>\n        ");
+  };
+
   User.prototype.getLat = function () {
     return this.location.lat;
   };
@@ -136934,6 +136938,10 @@ function () {
     };
   }
 
+  Company.prototype.showInformation = function () {
+    return "\n            <div>\n                <h5>Name: ".concat(this.companyName, "</h5>\n                <h6>Phrase: ").concat(this.catchPhrase, "</h6>\n                <p>lat:").concat(this.location.lat, " lng:").concat(this.location.lng, "</p>\n            </div>\n        ");
+  };
+
   Company.prototype.getLat = function () {
     return this.location.lat;
   };
@@ -136967,22 +136975,12 @@ function () {
     });
   }
 
-  CustomMap.prototype.addUserMarker = function (user) {
+  CustomMap.prototype.addMarker = function (mappable) {
     new google.maps.Marker({
       map: this.googleMap,
       position: {
-        lat: user.getLat(),
-        lng: user.getLng()
-      }
-    });
-  };
-
-  CustomMap.prototype.addCompanyMarker = function (company) {
-    new google.maps.Marker({
-      map: this.googleMap,
-      position: {
-        lat: company.getLat(),
-        lng: company.getLng()
+        lat: mappable.getLat(),
+        lng: mappable.getLng()
       }
     });
   };
@@ -137007,8 +137005,8 @@ var CustomMap_1 = require("./CustomMap");
 var user = new User_1.User();
 var company = new Company_1.Company();
 var customMap = new CustomMap_1.CustomMap('map');
-customMap.addUserMarker(user);
-customMap.addCompanyMarker(company);
+customMap.addMarker(user);
+customMap.addMarker(company);
 },{"./User":"src/User.ts","./Company":"src/Company.ts","./CustomMap":"src/CustomMap.ts"}],"C:/Users/darek/AppData/Roaming/npm/node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
