@@ -1,5 +1,3 @@
-import { Company } from './Company';
-import { User } from './User';
 import { Mappable } from './types/index'
 
 export class CustomMap {

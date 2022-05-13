@@ -1,8 +1,6 @@
 import { Location, Mappable } from './types/index';
 import faker from 'faker';
 
-
-
 export class User implements Mappable {
     private name: string;
     private location: Location;
