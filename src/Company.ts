@@ -14,4 +14,12 @@ export class Company {
             lng: parseFloat(faker.address.longitude())
         }
     }
+
+    getLat(): number {
+        return this.location.lat;
+    }
+
+    getLng(): number {
+        return this.location.lng
+    }
 }

@@ -12,4 +12,12 @@ export class User {
             lng: parseFloat(faker.address.longitude())
         } 
     }
+
+    getLat(): number {
+        return this.location.lat;
+    }
+
+    getLng(): number {
+        return this.location.lng
+    }
 }
